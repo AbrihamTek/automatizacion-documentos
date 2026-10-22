@@ -1,60 +1,37 @@
-# 📄 Automatización de Documentos — PDF a Excel
+## Automatización de facturas y boletas PDF a Excel
 
-Convierte facturas y cotizaciones en PDF a una planilla Excel limpia con informe automático.
+¿Tu equipo copia manualmente información de facturas o boletas a una planilla? Este proyecto busca simplificar esa tarea mediante un script en Python que extrae campos reconocibles de documentos PDF y genera resultados organizados en Excel.
 
-## ¿Qué problema resuelve?
+### ¿Qué hace?
 
-Muchas pymes reciben decenas de facturas en PDF cada mes y las procesan a mano.
-Este script las lee automáticamente y genera un Excel con todos los datos organizados
-y un resumen con el total general — en segundos.
+- Busca datos como empresa o proveedor, fecha y monto total mediante patrones de extracción.
+- Organiza los resultados en una planilla Excel.
+- Genera un informe para revisar los documentos procesados.
+- Permite identificar casos que requieren revisión manual.
 
-## Demo
+### Formatos compatibles
 
-**Entrada:** 3 facturas PDF de distintos proveedores
+**Probado:** dos formatos distintos de documentos —facturas y boletas—, con 4 de 4 documentos procesados correctamente en la muestra de prueba.
 
-**Salida generada automáticamente:**
+**Limitaciones actuales:**
+- Necesita PDF con texto seleccionable; no procesa directamente documentos escaneados como imágenes.
+- Los campos deben contener etiquetas o patrones que el extractor pueda reconocer.
+- Los formatos completamente distintos pueden requerir ajustes en los patrones de extracción.
+- Los resultados deben revisarse antes de utilizarlos en procesos contables.
 
-| Archivo | Empresa | Fecha | Total | Estado |
-|---|---|---|---|---|
-| factura_001.pdf | Ferreteria Lopez | 2024-10-01 | $20,500 | OK |
-| factura_002.pdf | Panaderia El Trigo | 2024-10-05 | $26,500 | OK |
-| factura_003.pdf | Gym FitZone | 2024-10-08 | $60,000 | OK |
+La prueba de 4 documentos es una validación inicial, no una garantía de precisión para cualquier documento.
 
-**Resumen automático:**
-- Total documentos: 3
-- Procesados OK: 3
-- TOTAL GENERAL: $107,000
+### Servicio piloto para pymes
 
-## Cómo usarlo
+Estoy buscando empresas y oficinas contables interesadas en evaluar esta automatización con una muestra pequeña de documentos compatibles.
 
-**1. Instalar dependencias:**
-```bash
-pip install -r requirements.txt
-```
+El piloto permite comprobar qué campos se extraen correctamente, identificar excepciones y estimar si el flujo puede reducir trabajo manual.
 
-**2. Poner los PDFs en la carpeta `datos_ejemplo/`**
+La compatibilidad se revisa antes de acordar el alcance. Los documentos del cliente se tratarán con autorización y confidencialidad; no se publicarán en este repositorio.
 
-**3. Ejecutar:**
-```bash
-python src/procesar.py
-```
+### ¿Quieres evaluar tu proceso?
 
-**4. Abrir el Excel generado en la carpeta `salida/`**
+Repositorio y demostración técnica:  
+https://github.com/AbrihamTek/automatizacion-documentos
 
-## Casos marcados para revisión
-
-Si un PDF no tiene los campos esperados, el script lo marca como `REVISAR`
-en lugar de inventar datos. Nunca genera información falsa.
-
-## Stack
-
-- Python 3.13
-- pdfplumber — extracción de texto desde PDF
-- pandas — procesamiento de datos
-- openpyxl — generación de Excel
-
-## Autor
-
-**AbrihamTek** — Estudiante de Ingeniería en Computación, UCSH, Chile.
-Disponible para automatizaciones a medida para pymes.
-Contacto: [github.com/AbrihamTek](https://github.com/AbrihamTek)
+Para evaluar una posible colaboración, contacta al desarrollador y coordinemos una demostración breve con datos ficticios o anonimizados.
