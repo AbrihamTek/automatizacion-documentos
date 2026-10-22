@@ -8,6 +8,13 @@
 - Organiza los resultados en una planilla Excel.
 - Genera un informe para revisar los documentos procesados.
 - Permite identificar casos que requieren revisión manual.
+  ### Vista previa del resultado
+
+**Hoja Facturas:**
+![Demo facturas](datos_factura.png)
+
+**Hoja Resumen:**
+![Demo resumen](datos_resumen.png)
 
 ### Formatos compatibles
 
